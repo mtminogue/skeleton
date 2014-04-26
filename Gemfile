@@ -8,12 +8,15 @@ gem 'bcrypt'
 gem 'faker'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
+gem 'pg'
 
 
 group :development, :test do
-	# Use sqlite3 as the database for Active Record
-	gem 'sqlite3'
 	gem 'rspec-rails'
+	gem 'guard-rspec'
+	gem 'spork-rails'
+	gem 'guard-spork'
+	gem 'childprocess'
 end
 
 group :test do
@@ -23,9 +26,9 @@ group :test do
 	gem 'cucumber-rails', :require => false
 	gem 'database_cleaner', github: 'bmabey/database_cleaner'
 
-	gem 'rb-notifu', '0.0.4'
-    gem 'win32console', '1.3.2'
-    gem 'wdm', '0.1.0'
+	gem 'rb-notifu'
+  #gem 'win32console'
+  gem 'wdm'
 end
 
 # Use SCSS for stylesheets
@@ -55,7 +58,6 @@ group :doc do
 end
 
 group :production do
-	gem 'pg'
 	gem 'rails_12factor'
 end
 

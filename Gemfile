@@ -27,7 +27,6 @@ group :test do
 	gem 'database_cleaner', github: 'bmabey/database_cleaner'
 
 	gem 'rb-notifu'
-  #gem 'win32console'
   gem 'wdm'
 end
 

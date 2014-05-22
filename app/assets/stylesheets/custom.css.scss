@@ -161,3 +161,25 @@ aside {
   @extend .control-group;
   @extend .has-error;
 }
+
+/* alert notice */
+
+.alert-notice {
+  @extend .bg-warning;
+  @extend .text-warning;
+}
+
+/* Users index */
+
+.users {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-top: 1px solid $gray-lighter;
+    &:last-child {
+      border-bottom: 1px solid $gray-lighter;
+    }
+  }
+}

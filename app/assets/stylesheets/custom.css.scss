@@ -3,6 +3,7 @@
 /* mixins, variables, etc. */
 
 $grayMediumLight: #eaeaea;
+$linkColor: #428bca;
 
 @mixin box_sizing {
   -moz-box-sizing: border-box;
@@ -147,6 +148,35 @@ aside {
   margin-right: 10px;
 }
 
+.stats {
+  overflow: auto;
+  a {
+    float: left;
+    padding: 0 10px;
+    border-left: 1px solid $gray-lighter;
+    color: gray;
+    &:first-child {
+      padding-left: 0;
+      border: 0;
+    }
+    &:hover {
+      text-decoration: none;
+      color: $linkColor;
+    }
+  }
+  strong {
+    display: block;
+  }
+}
+
+.user_avatars {
+  overflow: auto;
+  margin-top: 10px;
+  .gravatar {
+    margin: 1px 1px;
+  }
+}
+
 /* forms */
 
 #error_explanation {
@@ -158,7 +188,7 @@ aside {
 }
 
 .field_with_errors {
-  @extend .control-group;
+  
   @extend .has-error;
 }
 
@@ -168,6 +198,8 @@ aside {
   @extend .bg-warning;
   @extend .text-warning;
 }
+
+
 
 /* Users index */
 
@@ -210,4 +242,12 @@ aside {
     height: 100px;
     margin-bottom: 5px;
   }
+}
+
+/* micropost jQuery countdown */
+
+.countdown {
+  display: inline;
+  padding-left: 30px;
+  color: $gray-light;
 }

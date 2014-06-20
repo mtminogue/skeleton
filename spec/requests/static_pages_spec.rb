@@ -31,6 +31,29 @@ describe "Static pages" do
           expect(page).to have_selector("li##{item.id}", text: item.content)
         end
       end
+
+      describe "follower/following counts" do
+        let(:other_user) { FactoryGirl.create(:user) }
+        before do
+          other_user.follow!(user)
+          visit root_path
+        end
+
+        it { should have_link("0 following", href: following_user_path(user)) }
+        it { should have_link("1 followers", href: followers_user_path(user)) }
+      end
+
+      it "should count the microposts" do #working on this
+        expect(page).to have_content('2 microposts')
+      end
+
+      describe "pagination" do
+        it "should have pagination" do
+          30.times { FactoryGirl.create(:micropost, user: user, content: "Dolor sit amet") }
+          visit root_path
+          expect(page).to have_selector('div.pagination')
+        end
+      end
     end
   end
 
